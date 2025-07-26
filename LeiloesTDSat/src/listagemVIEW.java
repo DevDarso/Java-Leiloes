@@ -6,14 +6,14 @@ import javax.swing.table.DefaultTableModel;
 public class listagemVIEW extends javax.swing.JFrame {
 
     int idProduto;
-    
+
     public listagemVIEW() {
         initComponents();
         listarProdutos();
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        
-             listaProdutos.getSelectionModel().addListSelectionListener(e -> {
+
+        listaProdutos.getSelectionModel().addListSelectionListener(e -> {
             int posicao = listaProdutos.getSelectedRow();
             if (posicao != -1) {
                 idProduto = (int) listaProdutos.getValueAt(posicao, 0);
@@ -133,18 +133,15 @@ public class listagemVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
-        //String id = id_produto_venda.getText();
+
         int posicao = listaProdutos.getSelectedRow();
-    if (posicao == -1) {
-        JOptionPane.showMessageDialog(this, "Selecione um produto!");
-        return;
-    }
-        
-        //int id = getPosicao();
+        if (posicao == -1) {
+            JOptionPane.showMessageDialog(this, "Selecione um produto!");
+            return;
+        }
+
         int id = Integer.parseInt(id_produto_venda.getText());
-        
-//        ProdutosDAO produtosdao = new ProdutosDAO();
-        
+
         ProdutosDAO.atualizarStatus(id);
         listarProdutos();
     }//GEN-LAST:event_btnVenderActionPerformed
@@ -227,17 +224,4 @@ public class listagemVIEW extends javax.swing.JFrame {
         }
     
     }
-    /*
-        private int getPosicao() {
-        int posicao = listaProdutos.getSelectedRow();
-        
-        if(posicao <= -1) {
-            JOptionPane.showMessageDialog(null, "Selecione um item para excluir!");
-        }else {
-            JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
-        }
-        
-        return posicao;
-    }
-        */
 }
