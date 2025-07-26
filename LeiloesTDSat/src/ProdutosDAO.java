@@ -82,7 +82,7 @@ public class ProdutosDAO {
         }
         return listagem;
     }    
-       public static boolean atualizarStatus(int id) {
+      public static boolean atualizarStatus(int id) {
     conectaDAO conexao = null;
     PreparedStatement ps = null;
 
@@ -102,7 +102,7 @@ public class ProdutosDAO {
         return false;
     }
 }
-       public ArrayList<ProdutosDTO> listarVendidos(){
+        public ArrayList<ProdutosDTO> listarVendidos(){
         ArrayList<ProdutosDTO> listagem = new ArrayList<>();
         conectaDAO conexao = null;
         PreparedStatement ps = null;
@@ -136,6 +136,6 @@ public class ProdutosDAO {
             }
         }
         return listagem;
-    }   
+    }
  }
 

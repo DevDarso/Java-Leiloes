@@ -6,26 +6,22 @@ import javax.swing.JOptionPane;
 public class conectaDAO {
     private Connection conexao;
 
-    // Construtor para inicializar a conexão
+    
     public conectaDAO(Connection conexao) {
         this.conexao = conexao;
     }
 
-    // Construtor sem parâmetros
     public conectaDAO() {
     }
-
-    // Método para obter a conexão
+    
     public Connection getConexao() {
         return conexao;
     }
 
-    // Método para configurar a conexão
     public void setConexao(Connection conexao) {
         this.conexao = conexao;
     }
 
-    // Método para conectar ao banco de dados
     public void conectar() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -38,7 +34,6 @@ public class conectaDAO {
         }
     }
 
-    // Método para desconectar do banco de dados
     public void desconectar() {
         try {
             if (conexao != null) {
